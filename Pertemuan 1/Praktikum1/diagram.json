@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "M Alan Al-faqih",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 14.3, "left": -81.8, "attrs": {} },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 32.75,
+      "left": 38.4,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 18,
+      "left": 112.2,
+      "rotate": 90,
+      "attrs": { "color": "red" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "r1:1", "esp:GND.1", "black", [ "v0" ] ],
+    [ "r1:2", "led1:C", "green", [ "v0" ] ],
+    [ "led1:A", "esp:D5", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
